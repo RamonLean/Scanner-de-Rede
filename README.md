@@ -4,3 +4,5 @@ Scanner de Rede em python para detectar dispositivos conectados. Código simples
 
 
 Exemplo de uso: python3 Scanner_de_Rede.py 192.168.10.1/24
+
+Bibliotecas necessárias: scapy e argparse
