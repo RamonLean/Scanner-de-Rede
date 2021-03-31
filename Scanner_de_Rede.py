@@ -6,25 +6,25 @@ parser = argparse.ArgumentParser(description = "Scanner de rede")
 parser.add_argument("IP_Alvo", help="IP alvo (IP do roteador), exemplo :192.168.10.1/24")
 argumentos = parser.parse_args()
 target_ip = argumentos.IP_Alvo
-# IP Address for the destination
-# create ARP packet
+# IP de destino
+# Cra o pacote ARP
 arp = ARP(pdst=target_ip)
-# create the Ether broadcast packet
-# ff:ff:ff:ff:ff:ff MAC address indicates broadcasting
+# Cria o pacote Ether broadcast
+# ff:ff:ff:ff:ff:ff Endereço MAC para broadcasting
 ether = Ether(dst="ff:ff:ff:ff:ff:ff")
-# stack them
+
 packet = ether/arp
 
 result = srp(packet, timeout=3, verbose=0)[0]
 
-# a list of clients, we will fill this in the upcoming loop
+#Uma lista de clientes encontrados na rede.
 clientes = []
 
 for sent, received in result:
-    # for each response, append ip and mac address to `clients` list
+    # Coloca Ip e endereço MAC na lista de clientes
     clientes.append({'ip': received.psrc, 'mac': received.hwsrc})
 
-# print clients
+# Mostra na tela o resultado encontrado
 print("Dispositivos na rede:")
 print("IP" + " "*18+"MAC")
 for cliente in clientes:
