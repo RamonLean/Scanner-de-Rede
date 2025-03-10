@@ -1,8 +1,8 @@
-# Scanner-de-Rede
+# Network-scanner.
 
-Scanner de Rede em python para detectar dispositivos conectados. Código simples e funcional que pode servir para criar uma ferramenta mais robusta e para fins de aprendizado.
+Simple network scanner to detect devices connected to the network. Simple code that can be used to implement a more robust tool.
+Exemplo de uso: sudo python3 network_scanner.py 192.168.10.1/24
 
+Dependencies: scapy e argparse
+pip install scapy
 
-Exemplo de uso: python3 Scanner_de_Rede.py 192.168.10.1/24
-
-Bibliotecas necessárias: scapy e argparse
