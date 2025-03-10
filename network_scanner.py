@@ -21,7 +21,7 @@ except:
     print("You need to be root to run this scan. ")
     exit(1)
 
-#List of clientS founded in the network
+#List of clients founded in the network
 clients = []
 
 for sent, received in result:
